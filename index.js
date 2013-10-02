@@ -37,8 +37,8 @@ function TrvsCov(runner) {
     if (exists){
         var userPkg = JSON.parse(fs.readFileSync(path, 'utf8'));
         
-        if (userPkg && userPkg.scripts && userPkg.scripts[PACKAGE_KEY]){
-          var userOpts = userPkg.scripts[PACKAGE_KEY];
+        if (userPkg && userPkg.config && userPkg.config[PACKAGE_KEY]){
+          var userOpts = userPkg.config[PACKAGE_KEY];
           options.threshold = userOpts[THRESHOLD_KEY] || options.threshold;
           options.global = userOpts[GLOBAL_KEY] || options.global;
           options.local = userOpts[LOCAL_KEY] || options.local;
